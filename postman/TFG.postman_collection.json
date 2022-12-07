@@ -1,0 +1,634 @@
+{
+	"info": {
+		"_postman_id": "b6345389-bc31-4a8e-a4f1-068a57e70bee",
+		"name": "TFG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19747193"
+	},
+	"item": [
+		{
+			"name": "Cloudinary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/familia/Downloads/Mujer - 58142.mp4"
+						},
+						{
+							"key": "upload_preset",
+							"value": "videos-app",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.cloudinary.com/v1_1/dk4rx07q2/upload?",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cloudinary",
+						"com"
+					],
+					"path": [
+						"v1_1",
+						"dk4rx07q2",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\" : \"Oliver\",\r\n    \"email\" : \"oliverh@mail.com\",\r\n    \"contraseña\" : \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/auth/new",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"auth",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"oliverh@mail.com\",\r\n    \"contraseña\" : \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/auth/",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Revalidar JWT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwMzc3NjgxLCJleHAiOjE2NzAzODQ4ODF9.3Q6OF40Uo8q0fgIBpk6sxaqdSixsP9f0xZC32Qlyeug",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/auth/renew?",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"auth",
+						"renew"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - getAllVideos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDEyNjg0LCJleHAiOjE2NzA0MTk4ODR9.ZUxqmzcadYatmKixeytUCnnKcuJvwbevuoVpur-zzsI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3050/api/videos/",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - getLastVideos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDEyNjg0LCJleHAiOjE2NzA0MTk4ODR9.ZUxqmzcadYatmKixeytUCnnKcuJvwbevuoVpur-zzsI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3050/api/videos/last/",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"last",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - getVideosUsuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDE2NDg3LCJleHAiOjE2NzA0MjM2ODd9.Jjg_3BUGxrbttpmobU2oNIE-kFbAPtq1FbQ6bhwaS9A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3050/api/videos/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - getVideosClave",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDEyNjg0LCJleHAiOjE2NzA0MTk4ODR9.ZUxqmzcadYatmKixeytUCnnKcuJvwbevuoVpur-zzsI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"palabraClave\" : \"prueba1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/clave/",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"clave",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - actualizarVideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDEyNjg0LCJleHAiOjE2NzA0MTk4ODR9.ZUxqmzcadYatmKixeytUCnnKcuJvwbevuoVpur-zzsI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\" : \"Video actualizado\",\r\n    \"palabrasClave\" : [\"java\", \"node\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - verVideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzkwODdmNTYwOTc3MzA4NTg1OGYzNzUiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDI1OTMzLCJleHAiOjE2NzA0MzMxMzN9.ZZxDCqZFIvVwTTXsDSR4fcKeUaBAE_ZRRRsoBi-FEFs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/visualizacion/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"visualizacion",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - likeVideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzkwODdmNTYwOTc3MzA4NTg1OGYzNzUiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDI1OTMzLCJleHAiOjE2NzA0MzMxMzN9.ZZxDCqZFIvVwTTXsDSR4fcKeUaBAE_ZRRRsoBi-FEFs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/like/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"like",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - dislikeVideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzkwODdmNTYwOTc3MzA4NTg1OGYzNzUiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDI1OTMzLCJleHAiOjE2NzA0MzMxMzN9.ZZxDCqZFIvVwTTXsDSR4fcKeUaBAE_ZRRRsoBi-FEFs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/dislike/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"dislike",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - eliminarVideo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDEyNjg0LCJleHAiOjE2NzA0MTk4ODR9.ZUxqmzcadYatmKixeytUCnnKcuJvwbevuoVpur-zzsI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/639081d087eb6c6422f9f9da",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"639081d087eb6c6422f9f9da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - eliminarComentario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDI1NDkxLCJleHAiOjE2NzA0MzI2OTF9.GFn2-VgAPqtH84ucQNXSdZsK7cgjAunZgkroJV0j4vg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/comentarios/63908b0a607d03dc6adafa54",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"comentarios",
+						"63908b0a607d03dc6adafa54"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - likeVideo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzhmZjA2NzdkNzBlMDhiMDkzZjU3ODkiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDEyNjg0LCJleHAiOjE2NzA0MTk4ODR9.ZUxqmzcadYatmKixeytUCnnKcuJvwbevuoVpur-zzsI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\" : \"Video actualizado\",\r\n    \"palabrasClave\" : [\"java\", \"node\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/like/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"like",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - subirVideo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzkwODdmNTYwOTc3MzA4NTg1OGYzNzUiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDE2MzczLCJleHAiOjE2NzA0MjM1NzN9.yvSyCXuPVlfj2DEi6HGnYTt4NxumJq_t8Y7gZHBYS6A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\" : \"Video usuario 2\",\r\n    \"palabrasClave\" : [\"react\", \"mongo\"],\r\n    \"refVideo\" : \"prueba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - crearComentario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzkwODdmNTYwOTc3MzA4NTg1OGYzNzUiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDE2MzczLCJleHAiOjE2NzA0MjM1NzN9.yvSyCXuPVlfj2DEi6HGnYTt4NxumJq_t8Y7gZHBYS6A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comentario\" : \"Buen video\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/comentarios/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"comentarios",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos - getComentarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzkwODdmNTYwOTc3MzA4NTg1OGYzNzUiLCJuYW1lIjoiT2xpdmVyIiwiaWF0IjoxNjcwNDE2MzczLCJleHAiOjE2NzA0MjM1NzN9.yvSyCXuPVlfj2DEi6HGnYTt4NxumJq_t8Y7gZHBYS6A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3050/api/videos/comentarios/63907c1cfbe325c68c4a4bd7",
+					"host": [
+						"localhost"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"videos",
+						"comentarios",
+						"63907c1cfbe325c68c4a4bd7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
